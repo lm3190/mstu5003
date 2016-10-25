@@ -4,27 +4,49 @@
 var numPizzas;
 var subTotal;
 var total;
-var hasDiscount = Boolean('false'); // Hint for prompts
+var hasDiscount = Boolean('flase'); // Hint for prompts
 
 // By convention, these variables represent CONSTANTS (unchanging values)
 var DISCOUNTCODE = "ChicagoStyleNumberOne";
-var DISCOUNTRATE;
+var DISCOUNTRATE = 10;
+var PRICEPIZZA = 15;
 // Set the flat rate per pizza
 
 var customerName = prompt('What is your name?');
-
+var numPizzas = prompt('How many pizzas?');
+var hasDiscount = prompt('Do you have a discount code?'); prompt ("What is your discount code?");
 /* prompt for the following: 1) number of pizzas in order, 2) Whether they have a discount, 3) The discount code (if they indicated they have one.) */
 
+
 /* Write 4 functions: */
+function hasDiscount(code) {
+	if (code == "ChicagoStyleNumberOne")
+	{var hasDiscount = true;
+	}
+	else {
+		alert("Code Invalid");
+	}
+}
 // Function that checks if the discount code the user gives matches the known discount code. Does not return anything but will set the has discount state to true if it matches. It will alert the user whether the code worked or not.
-
+function subTotal(amount) {
+	var subTotal = numPizzas * PRICEPIZZA - DISCOUNTRATE;
+	return subTotal;
+}
 // Function that calculates subtotal based on number of pizzas, flat rate per pizza, and discount. It should return a number.
-
+function total(cost) {
+	var total = subtotal * '.08';
+	return total;
+}
 // Function that calculates the total based on subtotal and tax rate. It should return a number;
-
+function reciept (name, numPizzas, subtotal, total, discount) {
+	console.log(customerName + numPizzas + hasDiscount + subTotal + total);
+}
 // Function that writes a reciept with user information, pizza order info, including prices, discount, etc. Does not return anything but will output to the console.
 
-
+customerName(Lisa);
+numPizzas(2);
+subtotal();
+total();
 /* Call functions in correct sequence and utilize them to create a "receipt" for the order in the console. */
 
 
