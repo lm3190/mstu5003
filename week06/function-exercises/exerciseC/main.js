@@ -4,11 +4,16 @@ var first = "Jin";
 var last = "Kuwata";
 
 // What does this line do? HINT: compare HTML to Browser
-document.getElementById('greeting').innerHTML = "Hola!";
+
 
 /* Make a function that takes 3 arguments
    Returns 1 String message like this: "Hello Jin Kuwata, your username is fabulous." */
+function nameDetails(firstName, lastName, userName) {
+    return ("Hello" + firstName + lastName + ", your username is" + userName);
+}
 
+nameDetails(first, last, username);
+document.getElementById('greeting').innerHTML = nameDetails(first, last, username)
 /* Replace the h1 innerText with the message by calling the function you created. */
 
 
@@ -19,9 +24,9 @@ var basicsBtnEl = document.getElementById('basicsBtn');
 
 // Adds an event 'click' listener on the button element
 // 2nd arg, an anonymous function is what gets called-back after the 'click'
-basicsBtnEl.addEventListener('click', function(){
-	email = emailEl.value;
-	console.log('clicked', email);
+basicsBtnEl.addEventListener('click', function() {
+    email = emailEl.value;
+    console.log('clicked', email);
 });
 // What is the value of email before the click?
 // After you type in an email and then click?

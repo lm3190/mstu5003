@@ -4,8 +4,32 @@
 var magicNum = Math.ceil(Math.random() * 100);
 // What does this line of code actually do part by part?
 // What is the range of possible integers here?
+// declares the variable magicNum
+// = sets-intializes the variable
+// Math.ceil I belive may have to do with rounding so it is an integer and Math.random selects a number randomly between 0-100,
 
+var guess;
+var guesses = 0;
+var guess;
+var numGuess = false;
 
+while (numGuess = false) {
+	guess = prompt("Guess a number between 0 and 100");
+	if (guess < 0 || guess > 100) {
+		alert("Please enter a number between 0-100");
+	} else {
+		guesses = guesses + 1;
+		if (guess == magicNum)
+     {
+			alert("That's It!");
+		} else {
+			alert("Try again!");
+		}
+	}
+}
+var stats = "You took " + guesses +
+            "to guess the magic number ";
+alert(stats);
 
 // Create a function that prompts the user to guess a number within the range of possible numbers and compares the user number to the magic number. Return String, 'low' if user number is low. 'high' if user number is high, 'exact' if user number is correct.
 
